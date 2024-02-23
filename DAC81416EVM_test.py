@@ -51,6 +51,7 @@ s=u2aDll.u2aPower_Enable (K,1,0,0)
 
 print("power")
 print(s)
+
 #dummy_write_to set the registers
 m = (c_uint8*3)()
 m[0]=0x00
@@ -62,6 +63,8 @@ print(hex(m[0]))
 print(hex(m[1]))
 print(hex(m[2]))
 #t.sleep(1)
+
+#set the DEV-PWDWN to 1 in the SPICONFIG Register
 m = (c_uint8*3)()
 m[0]=0x03
 m[1]=0x0a
@@ -72,6 +75,8 @@ print(hex(m[0]))
 print(hex(m[1]))
 print(hex(m[2]))
 #t.sleep(1)
+
+#set the DAC0 to 8000 
 o = (c_uint8*3)()
 o[0]=0x10
 o[1]=0x80
@@ -82,6 +87,8 @@ print(hex(o[0]))
 print(hex(o[1]))
 print(hex(o[2]))
 #t.sleep(1)
+
+#switching on the DAC0 
 p = (c_uint8*3)()
 p[0]=0x09
 p[1]=0xff
